@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Lightbulb, Target, Rocket, Globe } from "lucide-react";
 
