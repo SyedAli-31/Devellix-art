@@ -54,19 +54,26 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link
-              href="/contact"
-              className="text-lg text-white font-bold px-6 sm:px-8 py-2 sm:py-6 h-5 hover:bg-white/80  bg-red-600/80 border-3  border-black flex items-center gap-2 rounded-lg "
-            >
-              Get Started
-              <ChevronRight className="h-5 w-5" />
-            </Link>
-            <Link
-              href="/services"
-              className="text-lg px-6 sm:px-8 py-4 h-5 font-bold flex items-center sm:py-6 text-white border bg-black border-white hover:bg-white/50 rounded-md transition-all"
-            >
-              Our Services
-            </Link>
+         <div className="flex justify-center">
+  <Link
+    href="/contact"
+    className="flex w-full max-w-[250px] items-center justify-center gap-2 rounded-lg border-2 border-black bg-red-600/80 px-4 py-2 text-sm font-bold text-white transition-all duration-300 hover:bg-white hover:text-black sm:max-w-none sm:px-6 sm:py-3 sm:text-lg"
+  >
+    Get Started
+    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
+  </Link>
+</div>
+
+
+<div className="flex justify-center">
+  <Link
+    href="/services"
+    className="flex w-full max-w-[250px] items-center justify-center gap-2 rounded-md border border-white bg-black px-4 py-2 text-sm font-bold text-white transition-all duration-300 hover:bg-white/50 sm:max-w-none sm:px-6 sm:py-4 sm:text-lg"
+  >
+    Our Services
+  </Link>
+</div>
+
           </motion.div>
         </motion.div>
       </div>

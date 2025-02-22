@@ -86,7 +86,7 @@ export default function Header() {
             className="md:hidden text-gray-300 hover:text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="h-5 text-black w-5" />
           </Button>
 
           {/* Mobile Menu */}

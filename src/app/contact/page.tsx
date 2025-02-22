@@ -51,26 +51,36 @@ export default function Contact() {
   }
 
   return (
-    <div className="py-16 bg-gradient-to-b from-black via-red-950 to-black flex justify-center  text-white">
-      <div className="container  ">
+    <div className="relative py-16 bg-gradient-to-b from-black via-red-950 to-black flex justify-center text-white">
+      {/* 🔥 Background Glow Effect */}
+      <div className="absolute inset-0 bg-red-500/20 blur-[150px] pointer-events-none"></div>
+
+      <div className="container relative z-10">
+        {/* 🏆 Heading with Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold text-red-500 mb-4">Contact Us</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-red-500 mb-4 tracking-wide">
+            Contact Us
+          </h1>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             Get in touch with us to discuss your project or learn more about our services.
           </p>
         </motion.div>
 
+        {/* 📩 Contact Form + Info Grid */}
         <div className="grid md:grid-cols-2 gap-16">
+          {/* 📄 Form Section with Glassmorphism */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Card className="bg-gray-900 border border-red-600">
-              <CardContent className="p-6">
+            <Card className="bg-white/10 backdrop-blur-lg border border-red-600 shadow-lg shadow-red-500/20 rounded-xl">
+              <CardContent className="p-8">
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
@@ -85,7 +95,7 @@ export default function Contact() {
                           <FormControl>
                             <Input
                               placeholder="Your name"
-                              className="bg-gray-800 border border-red-500 text-white"
+                              className="bg-black/30 border border-red-500 text-white rounded-lg p-3 focus:ring-2 focus:ring-red-600"
                               {...field}
                             />
                           </FormControl>
@@ -104,7 +114,7 @@ export default function Contact() {
                             <Input
                               type="email"
                               placeholder="your@email.com"
-                              className="bg-gray-800 border border-red-500 text-white"
+                              className="bg-black/30 border border-red-500 text-white rounded-lg p-3 focus:ring-2 focus:ring-red-600"
                               {...field}
                             />
                           </FormControl>
@@ -123,7 +133,7 @@ export default function Contact() {
                             <Input
                               type="tel"
                               placeholder="Your phone number"
-                              className="bg-gray-800 border border-red-500 text-white"
+                              className="bg-black/30 border border-red-500 text-white rounded-lg p-3 focus:ring-2 focus:ring-red-600"
                               {...field}
                             />
                           </FormControl>
@@ -141,7 +151,7 @@ export default function Contact() {
                           <FormControl>
                             <Textarea
                               placeholder="Tell us about your project"
-                              className="min-h-[120px] bg-gray-800 border border-red-500 text-white"
+                              className="min-h-[120px] bg-black/30 border border-red-500 text-white rounded-lg p-3 focus:ring-2 focus:ring-red-600"
                               {...field}
                             />
                           </FormControl>
@@ -152,9 +162,9 @@ export default function Contact() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-red-600 hover:bg-red-700 text-white"
+                      className="w-full bg-red-600 hover:bg-red-700 transition-all duration-300 text-white font-bold py-3 rounded-lg shadow-md shadow-red-500/30 hover:shadow-red-500/40"
                     >
-                      Send Message
+                      Send Message 🚀
                     </Button>
                   </form>
                 </Form>
@@ -162,19 +172,21 @@ export default function Contact() {
             </Card>
           </motion.div>
 
+          {/* 📞 Contact Information Section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-8"
           >
-            <div>
+            <div className="ml-[30px]">
               <h2 className="text-2xl font-bold text-red-500 mb-6">Contact Information</h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-red-500 mt-1" />
                   <div>
                     <h3 className="font-semibold">Address</h3>
-                    <p className="text-gray-400">
+                    <p className="text-white">
                       123 Tech Street<br />
                       Silicon Valley, CA 94025<br />
                       United States
@@ -185,8 +197,8 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <Phone className="w-6 h-6 text-red-500 mt-1" />
                   <div>
-                    <h3 className="font-semibold">Phone</h3>
-                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                    <h3 className="font-semibold text-white">Phone</h3>
+                    <p className=" text-white">+1 (555) 123-4567</p>
                   </div>
                 </div>
 
@@ -194,26 +206,23 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-red-500 mt-1" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-400">contact@devillixart.com</p>
+                    <p className="text-white">contact@devillixart.com</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div>
+            <div className="ml-[30px]">
               <h2 className="text-2xl font-bold text-red-500 mb-6">Office Hours</h2>
-              <div className="space-y-2 text-gray-400">
+              <div className="space-y-2 text-white">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 2:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
             </div>
-
-            
           </motion.div>
         </div>
         <br />
-        <Statistics/>
+        <Statistics />
       </div>
     </div>
   );
