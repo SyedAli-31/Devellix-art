@@ -40,8 +40,9 @@ export default function Vision() {
         >
           <h1 className="text-4xl font-bold mb-4 text-white">Our Vision</h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            "We envision a future where every business, regardless of size, has access to
-            world-class digital solutions that drive growth and innovation."
+          &ldquo;We envision a future where every business, regardless of size, has access to
+          world-class digital solutions that drive growth and innovation.&rdquo;
+
           </p>
         </motion.div>
 

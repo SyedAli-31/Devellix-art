@@ -40,7 +40,7 @@ export default function ContactSection() {
             <span className="text-red-500">Start Your Project</span> with Us Today
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            We'd love to connect with you and figure out how we can contribute to your success.
+          We&apos;d love to connect with you and figure out how we can contribute to your success.
             Get started with an efficient, streamlined process:
           </p>
         </motion.div>

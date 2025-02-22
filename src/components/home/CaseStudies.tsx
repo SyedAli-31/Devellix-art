@@ -38,7 +38,7 @@ export default function CaseStudies() {
         >
           <h2 className="text-3xl font-bold text-white mb-4">Case Studies</h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Discover how we've helped businesses transform their digital presence.
+            Discover how We&apos;ve helped businesses transform their digital presence.
           </p>
         </motion.div>
 

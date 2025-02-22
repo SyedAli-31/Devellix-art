@@ -39,7 +39,7 @@ export default function CaseStudies() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">Case Studies</h1>
           <p className="text-white max-w-2xl mx-auto">
-            Explore how we've helped businesses achieve their digital transformation goals.
+            Explore how   We&apos;ve helped businesses achieve their digital transformation goals.
           </p>
         </div>
 

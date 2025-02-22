@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Left Column: Logo & Social Media */}
           <div>
             <div>
-              <img
+              <Image
                 src="/DEVELLIX-LOGO.png" // Replace with your logo path
                 alt="Devellix Art"
                 width={150}

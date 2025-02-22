@@ -72,7 +72,7 @@ export default function About() {
           >
             <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
             <p className="text-gray-400 mb-6">
-              Founded in 2010, Devillixart has grown from a small team of developers to a full-service software development company. We've helped hundreds of businesses transform their digital presence.
+              Founded in 2010, Devillixart has grown from a small team of developers to a full-service software development company.  We&apos;ve helped hundreds of businesses transform their digital presence.
             </p>
             <p className="text-gray-400">
               Our mission is to deliver exceptional software solutions that drive business growth and innovation.
@@ -129,7 +129,7 @@ function StatsSection() {
 /* Individual Stat Card with Counting Animation */
 function StatCard({ number, label }: { number: number; label: string }) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.floor(latest));
+  
   const [displayNumber, setDisplayNumber] = useState(0);
 
   useEffect(() => {

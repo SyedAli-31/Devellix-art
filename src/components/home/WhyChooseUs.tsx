@@ -55,7 +55,7 @@ const WhyChooseUs: React.FC = () => {
               <p>
                 Our teams of experts are the driving force behind all of our successes.
                 Together, we believe that anything is possible and work relentlessly to meet
-                or exceed our client's expectations while staying true to our core values.
+                or exceed our client&apos;s expectations while staying true to our core values.
               </p>
               <p>
                 Orient Software is committed to hiring the most talented individuals in

@@ -35,7 +35,7 @@ export default function Statistics() {
           className="text-left max-w-lg"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white leading-tight">
-            We've helped businesses increase their revenue on average by{" "}
+          We&apos;ve helped businesses increase their revenue on average by{" "}
             <span className="text-red-500">90%</span> in their first year with us!
           </h2>
         </motion.div>
@@ -54,7 +54,7 @@ export default function Statistics() {
 // ✅ Animated Counter Component (Same as `About` Section)
 function AnimatedStat({ number, label }: { number: number; label: string }) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.floor(latest));
+  
   const [displayNumber, setDisplayNumber] = useState(0);
 
   useEffect(() => {

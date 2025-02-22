@@ -42,7 +42,7 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(data: ContactFormValues) {
+  function onSubmit() {
     toast({
       title: "Message sent!",
       description: "We'll get back to you as soon as possible.",
