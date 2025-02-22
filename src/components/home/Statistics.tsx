@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -21,7 +21,7 @@ export default function Statistics() {
           alt="Statistics Background"
           layout="fill"
           objectFit="cover"
-          className="opacity-40" // Darker overlay for better text visibility
+          className="opacity-40"
         />
       </div>
 
@@ -43,7 +43,7 @@ export default function Statistics() {
         {/* Right Side - Stats Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {stats.map((stat, index) => (
-            <AnimatedStat key={index} value={stat.number} label={stat.label} index={index} />
+            <AnimatedStat key={index} number={stat.number} label={stat.label} />
           ))}
         </div>
       </div>
@@ -51,34 +51,30 @@ export default function Statistics() {
   );
 }
 
-// Animated Counter Component
-function AnimatedStat({ value, label, index }: { value: number; label: string; index: number }) {
-  const [count, setCount] = useState(0);
+// ✅ Animated Counter Component (Same as `About` Section)
+function AnimatedStat({ number, label }: { number: number; label: string }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.floor(latest));
+  const [displayNumber, setDisplayNumber] = useState(0);
 
   useEffect(() => {
-    let start = 0;
-    const end = value;
-    const duration = 1200; // Optimized animation
-    const step = Math.ceil(end / (duration / 20));
+    const controls = animate(count, number, {
+      duration: 3,
+      ease: "easeOut",
+      onUpdate: (latest) => setDisplayNumber(Math.floor(latest)), // Updates the number smoothly
+    });
 
-    const timer = setInterval(() => {
-      start += step;
-      setCount((prev) => (start <= end ? start : end));
-      if (start >= end) clearInterval(timer);
-    }, 20); // Smooth animation effect
-
-    return () => clearInterval(timer);
-  }, [value]);
+    return () => controls.stop();
+  }, [count, number]);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true }}
       className="relative bg-gradient-to-b from-red-600 to-black rounded-lg p-6 w-[200px] h-[120px] text-center flex flex-col justify-center shadow-xl border border-gray-700"
     >
-      <h3 className="text-4xl font-bold text-white mb-1">{count}+</h3>
+      <h3 className="text-4xl font-bold text-white mb-1">{displayNumber}+</h3>
       <p className="text-white text-sm">{label}</p>
     </motion.div>
   );

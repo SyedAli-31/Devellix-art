@@ -28,16 +28,30 @@ const WhyChooseUs: React.FC = () => {
 
       <div className="container max-w-7xl relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Left Side: Heading & Text */}
+          {/* Left Side: Heading & Text with Animation */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-white md:text-left text-center">
+            <motion.h2
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold mb-6 text-white md:text-left text-center"
+            >
               WHY CHOOSE US
-            </h2>
-            <div className="text-gray-400 space-y-4 text-lg text-center md:text-left">
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8 }}
+              viewport={{ once: true }}
+              className="text-gray-400 space-y-4 text-lg text-center md:text-left"
+            >
               <p>
                 Our teams of experts are the driving force behind all of our successes.
                 Together, we believe that anything is possible and work relentlessly to meet
@@ -48,13 +62,14 @@ const WhyChooseUs: React.FC = () => {
                 Information Technology and providing them with ongoing professional
                 growth and career development opportunities.
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right Side: Features List */}
+          {/* Right Side: Features List with Animation */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="bg-red-900/10 rounded-lg p-8 border border-gray-800"
           >

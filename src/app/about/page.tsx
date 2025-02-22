@@ -31,7 +31,7 @@ const sections = [
 
 export default function About() {
   return (
-    <div className="py-24 bg-black flex justify-center">
+    <div className="py-24 bg-gradient-to-b from-black via-red-950 to-black flex justify-center">
       <div className="container max-w-6xl px-6">
         {/* Header Section */}
         <motion.div

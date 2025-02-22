@@ -51,7 +51,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="py-16 bg-black flex justify-center  text-white">
+    <div className="py-16 bg-gradient-to-b from-black via-red-950 to-black flex justify-center  text-white">
       <div className="container  ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

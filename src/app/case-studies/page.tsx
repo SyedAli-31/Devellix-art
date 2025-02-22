@@ -34,11 +34,11 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 bg-gradient-to-b from-black  to-red-900 lg:px-8">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Case Studies</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-white mb-4">Case Studies</h1>
+          <p className="text-white max-w-2xl mx-auto">
             Explore how we've helped businesses achieve their digital transformation goals.
           </p>
         </div>
