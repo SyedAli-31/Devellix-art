@@ -56,23 +56,26 @@ export default function Statistics() {
 function AnimatedStat({ number, label }: { number: number; label: string }) {
   const count = useMotionValue(0);
   const [displayNumber, setDisplayNumber] = useState(0);
+  const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {
-    const controls = animate(count, number, {
-      duration: 3,
-      ease: "easeOut",
-      onUpdate: (latest) => setDisplayNumber(Math.floor(latest)), // Updates number smoothly
-    });
+    if (startAnimation) {
+      const controls = animate(count, number, {
+        duration: 3,
+        ease: "easeOut",
+        onUpdate: (latest) => setDisplayNumber(Math.floor(latest)),
+      });
 
-    return () => controls.stop();
-  }, [count, number]);
-
+      return () => controls.stop();
+    }
+  }, [startAnimation, count, number]);
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.5 }} // Ensures animation triggers when 50% of component is in view
+      onViewportEnter={() => setStartAnimation(true)} // Trigger counting when visible
       className="bg-gradient-to-b from-red-600 to-black rounded-lg p-5 sm:p-6 w-full max-w-[200px] h-[120px] text-center flex flex-col justify-center shadow-xl border border-gray-700 mx-auto"
     >
       <h3 className="text-3xl sm:text-4xl font-bold text-white mb-1">{displayNumber}+</h3>
